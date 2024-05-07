@@ -24,7 +24,7 @@ const choices = [
   {
     text: "Japonya'da Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 60, money: 1000, love: 5, happiness: 40 },
+    immediateEffects: { health: 65, money: 1000, love: 5, happiness: 40 },
     longTermEffects: [],
   },
   {
