@@ -6,13 +6,13 @@ const choices = [
   {
     text: "İskoçya'da Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 40, money: 3000, love: 15, happiness: 25 },
+    immediateEffects: { health: 40, money: 800, love: 15, happiness: 25 },
     longTermEffects: [],
   },
   {
     text: "Kanada'da Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 30, money: 20000, love: 20, happiness: 35 },
+    immediateEffects: { health: 30, money: 1000, love: 20, happiness: 35 },
     longTermEffects: [],
   },
   {
@@ -24,7 +24,7 @@ const choices = [
   {
     text: "Japonya'da Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 60, money: 10000, love: 5, happiness: 40 },
+    immediateEffects: { health: 60, money: 1000, love: 5, happiness: 40 },
     longTermEffects: [],
   },
   {
