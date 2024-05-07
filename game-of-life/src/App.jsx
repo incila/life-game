@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import LifeStage from "./components/LifeStage";
 import "./App.css";
 
@@ -226,7 +226,7 @@ const choices = [
   {
     text: "Yeni bir dil öğrenmeye başla",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 20, money: -1000, love: 0, happiness: 25 },
+    immediateEffects: { health: 0, money: -100, love: 0, happiness: 25 },
     longTermEffects: [],
   },
   {
@@ -485,16 +485,24 @@ function App() {
             }
             return a + 1;
           });
-          if (age >= 18) {
-            setHealth((h) => h - 5);
-          }
+          setHealth((h) => {
+            if (age >= 18) {
+              h -= 5; // Aging health decrease
+            }
+            if (money <= 0) {
+              const healthDamage = h >= 50 ? 10 : h;
+              alert("Paranız bitti, böbreğiniz satılıyor..");
+              return h - healthDamage;
+            }
+            return h;
+          });
         },
-        age < 18 ? 300 : 3000
+        age < 18 ? 300 : 2000
       );
 
       return () => clearInterval(interval);
     }
-  }, [loading, health, age]);
+  }, [loading, age, money]);
 
   useEffect(() => {
     const availableChoices = filterChoices();
@@ -525,19 +533,18 @@ function App() {
         let newMoney = money + choice.immediateEffects.money;
         if (newMoney < 0) {
           newMoney = 0;
-          setHealth(health > 0 ? 10 : 0);
-          alert("Paranız bitti, böbreğiniz satılıyor..");
         }
-        setHealth(health + choice.immediateEffects.health);
+        setHealth(
+          (h) => h + choice.immediateEffects.health - (age >= 18 ? 5 : 0)
+        );
         setMoney(newMoney);
         setLove(love + choice.immediateEffects.love);
         setHappiness(happiness + choice.immediateEffects.happiness);
         setHistory([...history, choice.text]);
         setAge(age + 1);
-        setHealth(health - (age >= 18 ? 5 : 0));
         setAnimating(false);
       },
-      age < 18 ? 300 : 4000
+      age < 18 ? 300 : 2000
     );
   };
 
@@ -613,7 +620,7 @@ function App() {
       <header>
         <h1>Davşan Hayantı</h1>
         <div className="stats">
-          <p>Yaş: {age} </p>
+          <p>Yaş: {age}</p>
           <p>Sağlık: {health}🩺</p>
           <p>Para: {money}💸</p>
           <p>Aşk: {love} 💌</p>
