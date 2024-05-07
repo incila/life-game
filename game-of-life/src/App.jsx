@@ -226,19 +226,19 @@ const choices = [
   {
     text: "Yeni bir dil öğrenmeye başla",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 20, money: -10000, love: 0, happiness: 25 },
+    immediateEffects: { health: 20, money: -1000, love: 0, happiness: 25 },
     longTermEffects: [],
   },
   {
     text: "Yoga veya meditasyon yapmayı dene",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 25, money: 10000, love: 20, happiness: 30 },
+    immediateEffects: { health: 25, money: 0, love: 20, happiness: 30 },
     longTermEffects: [],
   },
   {
     text: "Bir spor veya fitness rutini başlat",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 50, money: -10000, love: 0, happiness: 15 },
+    immediateEffects: { health: 30, money: -500, love: 0, happiness: 15 },
     longTermEffects: [],
   },
   {
@@ -250,13 +250,13 @@ const choices = [
   {
     text: "Daha sağlıklı bir beslenme alışkanlığı edin",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 45, money: -8000, love: 0, happiness: 0 },
+    immediateEffects: { health: 45, money: -200, love: 0, happiness: 0 },
     longTermEffects: [],
   },
   {
     text: "Kendi işini kur",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: -10, money: -50000, love: 0, happiness: -10 },
+    immediateEffects: { health: -10, money: -5000, love: 0, happiness: -10 },
     longTermEffects: [
       { effect: { money: 20000, happiness: 20 }, duration: 10, startYear: 5 },
     ],
@@ -264,7 +264,7 @@ const choices = [
   {
     text: "Yüksek öğrenim için yurtdışına git",
     ageRange: { min: 18, max: 30 },
-    immediateEffects: { health: 0, money: -30000, love: 5, happiness: 30 },
+    immediateEffects: { health: 0, money: -900, love: 5, happiness: 30 },
     longTermEffects: [
       { effect: { happiness: 50, love: 50 }, duration: 5, startYear: 5 },
     ],
@@ -272,7 +272,7 @@ const choices = [
   {
     text: "Bir aile kur",
     ageRange: { min: 20, max: 40 },
-    immediateEffects: { health: 0, money: -200000, love: 500, happiness: 30 },
+    immediateEffects: { health: 0, money: -2000, love: 500, happiness: 30 },
     longTermEffects: [{ effect: { love: -50 }, duration: 20, startYear: 5 }],
   },
   {
@@ -525,17 +525,16 @@ function App() {
         let newMoney = money + choice.immediateEffects.money;
         if (newMoney < 0) {
           newMoney = 0;
-          setHealth(health - (health - 10));
+          setHealth(health > 0 ? 10 : 0);
           alert("Paranız bitti, böbreğiniz satılıyor..");
         }
-        setHealth(
-          health + choice.immediateEffects.health - (age >= 18 ? 5 : 0)
-        );
+        setHealth(health + choice.immediateEffects.health);
         setMoney(newMoney);
         setLove(love + choice.immediateEffects.love);
         setHappiness(happiness + choice.immediateEffects.happiness);
         setHistory([...history, choice.text]);
         setAge(age + 1);
+        setHealth(health - (age >= 18 ? 5 : 0));
         setAnimating(false);
       },
       age < 18 ? 300 : 4000
