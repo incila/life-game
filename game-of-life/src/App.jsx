@@ -138,7 +138,7 @@ const choices = [
   {
     text: "Bir online mağaza aç",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: -5, money: -10000, love: 0, happiness: 5 },
+    immediateEffects: { health: -5, money: -1000, love: 0, happiness: 5 },
     longTermEffects: [{ effect: { money: 5000 }, duration: 15, startYear: 3 }],
   },
   {
@@ -178,19 +178,19 @@ const choices = [
   {
     text: "Amerikada Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: -20, money: 50000, love: 30, happiness: 40 },
+    immediateEffects: { health: -20, money: 3000, love: 30, happiness: 40 },
     longTermEffects: [],
   },
   {
     text: "Almanyada Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 50, money: 5000, love: 10, happiness: 30 },
+    immediateEffects: { health: 50, money: 3000, love: 10, happiness: 30 },
     longTermEffects: [],
   },
   {
     text: "Hindistanda Doğ",
     ageRange: { min: 0, max: 1 },
-    immediateEffects: { health: 0, money: 0, love: 0, happiness: 0 },
+    immediateEffects: { health: 0, money: 50, love: 0, happiness: 0 },
     longTermEffects: [],
   },
   {
@@ -220,7 +220,7 @@ const choices = [
   {
     text: "Bir hobinin tadını çıkar",
     ageRange: { min: 18, max: 99 },
-    immediateEffects: { health: 0, money: -5000, love: 0, happiness: 10 },
+    immediateEffects: { health: 0, money: -500, love: 0, happiness: 10 },
     longTermEffects: [],
   },
   {
@@ -322,7 +322,7 @@ const choices = [
   {
     text: "Dünya turuna çık",
     ageRange: { min: 18, max: 50 },
-    immediateEffects: { health: 10, money: -20000, love: 0, happiness: 30 },
+    immediateEffects: { health: 10, money: -1000, love: 0, happiness: 30 },
     longTermEffects: [
       { effect: { happiness: 10 }, duration: 10, startYear: 1 },
     ],
@@ -330,7 +330,7 @@ const choices = [
   {
     text: "Bir kitap yaz",
     ageRange: { min: 20, max: 60 },
-    immediateEffects: { health: 0, money: -5000, love: 0, happiness: 15 },
+    immediateEffects: { health: 0, money: -1000, love: 0, happiness: 15 },
     longTermEffects: [
       { effect: { money: 1000, happiness: 5 }, duration: 10, startYear: 2 },
     ],
@@ -358,7 +358,7 @@ const choices = [
   {
     text: "Yoga stüdyosu aç",
     ageRange: { min: 25, max: 50 },
-    immediateEffects: { health: -10, money: -10000, love: 0, happiness: 15 },
+    immediateEffects: { health: -10, money: -2500, love: 0, happiness: 15 },
     longTermEffects: [
       { effect: { money: 300, happiness: 10 }, duration: 15, startYear: 3 },
     ],
@@ -366,7 +366,7 @@ const choices = [
   {
     text: "Vegan kafe aç",
     ageRange: { min: 20, max: 50 },
-    immediateEffects: { health: 5, money: -15000, love: 10, happiness: 10 },
+    immediateEffects: { health: 5, money: -3500, love: 10, happiness: 10 },
     longTermEffects: [{ effect: { money: 400 }, duration: 10, startYear: 4 }],
   },
   {
@@ -424,7 +424,7 @@ const choices = [
   {
     text: "Bir restoran aç",
     ageRange: { min: 25, max: 60 },
-    immediateEffects: { health: -5, money: -30000, love: 0, happiness: 10 },
+    immediateEffects: { health: -5, money: -3000, love: 0, happiness: 10 },
     longTermEffects: [
       { effect: { money: 5000, happiness: 10 }, duration: 10, startYear: 5 },
     ],
@@ -432,7 +432,7 @@ const choices = [
   {
     text: "Bir çiftlik işlet",
     ageRange: { min: 25, max: 80 },
-    immediateEffects: { health: 20, money: -20000, love: 0, happiness: 15 },
+    immediateEffects: { health: 20, money: -2000, love: 0, happiness: 15 },
     longTermEffects: [
       { effect: { money: 3000, happiness: 5 }, duration: 20, startYear: 3 },
     ],
@@ -440,7 +440,7 @@ const choices = [
   {
     text: "Bir teknoloji startup'ı kur",
     ageRange: { min: 22, max: 45 },
-    immediateEffects: { health: -15, money: -50000, love: 0, happiness: -5 },
+    immediateEffects: { health: -15, money: -5000, love: 0, happiness: -5 },
     longTermEffects: [
       { effect: { money: 15000, happiness: 15 }, duration: 10, startYear: 5 },
     ],
@@ -448,7 +448,7 @@ const choices = [
   {
     text: "Bir hayır kurumu başlat",
     ageRange: { min: 30, max: 80 },
-    immediateEffects: { health: 5, money: -10000, love: 10, happiness: 25 },
+    immediateEffects: { health: 5, money: -1000, love: 10, happiness: 25 },
     longTermEffects: [
       { effect: { happiness: 10 }, duration: 20, startYear: 2 },
     ],
@@ -456,7 +456,7 @@ const choices = [
   {
     text: "Bir film yönet",
     ageRange: { min: 20, max: 70 },
-    immediateEffects: { health: -5, money: -15000, love: 0, happiness: 20 },
+    immediateEffects: { health: -5, money: -1500, love: 0, happiness: 20 },
     longTermEffects: [
       { effect: { money: 7000, happiness: 10 }, duration: 10, startYear: 3 },
     ],
