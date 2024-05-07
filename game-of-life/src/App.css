@@ -62,6 +62,16 @@ section {
   margin-top: 20px;
 }
 
+.game-over {
+  font-size: 24px;
+  color: #f7f7f7;
+  background-color: #5a009d; /* A lighter shade of purple for game over */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  animation: bounce 1s infinite;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .stats {
@@ -85,20 +95,24 @@ section {
 }
 
 .game-container {
-  background-image: url('8bit-background.png');
+  background-image: url("8bit-background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 /* Add more styles as needed */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
   40% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   60% {
-      transform: translateY(-5px);
+    transform: translateY(-5px);
   }
 }

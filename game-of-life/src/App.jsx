@@ -525,7 +525,7 @@ function App() {
         let newMoney = money + choice.immediateEffects.money;
         if (newMoney < 0) {
           newMoney = 0;
-          setHealth(health - 50);
+          setHealth(health - (health - 10));
           alert("Paranız bitti, böbreğiniz satılıyor..");
         }
         setHealth(
