@@ -544,8 +544,8 @@ function App() {
   };
 
   if (money <= 0 && health > 0) {
-    setHealth(health - (health - 10));
-    alert("Paranız bitti! Böbreğiniz satılıyor..");
+    setHealth(0);
+    alert("Paranız bitti! Yapı kredi organlarınızı hacize geliyor..");
   }
 
   if (age > 100) {
