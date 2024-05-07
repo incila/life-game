@@ -468,7 +468,7 @@ function App() {
   const [currentDecision, setCurrentDecision] = useState(null);
   const [age, setAge] = useState(1);
   const [health, setHealth] = useState(100);
-  const [money, setMoney] = useState(0);
+  const [money, setMoney] = useState(1);
   const [love, setLove] = useState(0);
   const [happiness, setHappiness] = useState(0);
   const [history, setHistory] = useState([]);
