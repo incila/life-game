@@ -1,33 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .life-stage {
-    text-align: center;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .choice-card {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px auto;
-    width: 80%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  background: #2b7c23; 
+  border: 3px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  min-height: 10vh;
+}
+
+.choice-card:hover {
+  transform: translateY(-5px);
+  background: #37aa2c; 
+  border-color: #555;
 }
 
 .choice-text {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #d3ebe7; /* Light grey text color for contrast */
+  padding: 20px;
+  text-align: center;
+  margin: 0;
 }
 
 .choice-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  background: #333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.choice-button:focus,
 .choice-button:hover {
-    background-color: #0056b3;
+  background: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .life-stage {
+    flex-direction: column;
+  }
+
+  .choice-card {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.life-stage {
+  animation: fadeIn 1s ease-out;
 }
