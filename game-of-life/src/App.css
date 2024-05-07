@@ -37,7 +37,7 @@ header h1 {
 }
 
 .stats p {
-  margin: 0;
+  margin: 0 10;
   font-size: 16px;
   color: #f7f7f7; /* Light grey text for stats to stand out */
 }
