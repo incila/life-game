@@ -543,7 +543,7 @@ function App() {
     );
   };
 
-  if (money <= 0) {
+  if (money <= 0 && health > 0) {
     setHealth(health - (health - 10));
     alert("Paranız bitti! Böbreğiniz satılıyor..");
   }
