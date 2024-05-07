@@ -489,11 +489,6 @@ function App() {
             if (age >= 18) {
               h -= 5; // Aging health decrease
             }
-            if (money <= 0) {
-              const healthDamage = h >= 50 ? 10 : h;
-              alert("Paranız bitti, böbreğiniz satılıyor..");
-              return h - healthDamage;
-            }
             return h;
           });
         },
@@ -547,6 +542,11 @@ function App() {
       age < 18 ? 300 : 2000
     );
   };
+
+  if (money <= 0) {
+    setHealth(health - (health - 10));
+    alert("Paranız bitti! Böbreğiniz satılıyor..");
+  }
 
   if (age > 100) {
     return <div className="game-over">Oyun bitti! 100 yaşına ulaştın!</div>;
