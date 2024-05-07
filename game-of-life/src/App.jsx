@@ -570,7 +570,7 @@ function App() {
       return (
         <div className="game-over">
           Uzun ama kötü bir ömür yaşadın gibi görünüyor. Uzun yaşamak marifet
-          değil.
+          değil. Daha iyi kararlar vermek için yeniden başla.
         </div>
       );
     }
@@ -578,21 +578,24 @@ function App() {
     if (happiness >= 50 && love >= 50) {
       return (
         <div className="game-over">
-          Tebrikler! Kısa ama mutlu ve sevgi dolu bir ömür yaşadın!
+          Tebrikler! Kısa ama mutlu ve sevgi dolu bir ömür yaşadın! Gelecek
+          sefer para hesabını daha iyi yapmayı dene.
         </div>
       );
     }
     if (happiness < 50 && love >= 50) {
       return (
         <div className="game-over">
-          Tebrikler! Kısa ama sevgi dolu bir ömür yaşadın!
+          Tebrikler! Kısa ama sevgi dolu bir ömür yaşadın! Gelecek sefer para
+          hesabını daha iyi yapmayı dene.
         </div>
       );
     }
     if (happiness >= 50 && love < 50) {
       return (
         <div className="game-over">
-          Tebrikler! Kısa ama mutlu bir ömür yaşadın!
+          Tebrikler! Kısa ama mutlu bir ömür yaşadın! Gelecek sefer para
+          hesabını daha iyi yapmayı dene.
         </div>
       );
     }
@@ -600,7 +603,7 @@ function App() {
       return (
         <div className="game-over">
           Kısa ve kötü bir ömür yaşadın, daha iyi kararlar vermek için yeniden
-          başla.
+          başla. Gelecek sefer para hesabını daha iyi yapmayı dene.
         </div>
       );
     }
