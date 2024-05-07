@@ -543,7 +543,7 @@ function App() {
     );
   };
 
-  if (money <= 0 && health > 0) {
+  if (money == 0 && health > 0) {
     setHealth(0);
     alert("Paranız bitti! Yapı kredi organlarınızı hacize geliyor..");
   }
